@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
             margin: 0;
@@ -13,12 +15,15 @@
         .topnav{
             display: flex;
             flex-wrap: wrap;
+            justify-content: flex-end;
             position: fixed;
             width:100%;
             overflow:hidden;
             background-color: #e9e9e9;
             color: black;
-            padding: 25px;
+            padding: 15px;
+            top:0;
+            margin-right:20px;
         }
         .search1{
             margin-right: 25px;
@@ -32,18 +37,11 @@
         .topnav .search1 button{
             border:none;
         }
-        #search_img{
-            width:40px;
-            height:auto;
-        }
-        #profile_img{
-            width:40px;
-            height:auto;
-        }
         .container_products{
             display: flex;
             flex-wrap: wrap;
-            margin: 20px;
+            padding-top:50px;
+            padding-bottom: 40px;
             justify-content: center;
         }
         .container_products img{
@@ -111,9 +109,10 @@
     bottom:0;
     width:100%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 .navbar a {
-    float: left;
     display: block;
     color: #f2f2f2;
     text-align: center;
@@ -134,43 +133,33 @@
 </head>
 <body>
     <div class="topnav">
-            <div class="search1">
-                <form action="/action_page.php">
-                    <table>
-                        <tr>
-                            <td>
-                                <input type="text" placeholder="Search..." name="search">
-                            </td>
-                            <td>
-                                <button type="submit"><img src="search.jpg" id="search_img"></button>
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-            <div style="margin-right:20px;">
-                <a class="profile" href="#profile"><img src="profile_pic.jpg" id="profile_img"></a>
-            </div>
-            <div>
-                <h1 style="text-align:center;">Online Shopping</h1>
-            </div>
-            <div style="padding:15px;">
-                <form action="/action_page.php">
-                    <label for="sort">Sort:</label>
-                    <select name="sort" id="sort">
-                        <option value="price">Cheapest</option>
-                        <option value="popularity">Most Popular</option>
-                        <option value="update">Most Recent</option>
-                    </select>
-                </form>
-            </div>
-    </div><br><br><br><br><br>
+        <div>
+            <h1 style="text-align:center;">Online Shopping</h1>
+        </div>
+        <div class="search1" style="margin-left: 350px;">
+            <form action="/action_page.php">
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" placeholder="Search..." name="search">
+                        </td>
+                        <td>
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div style="margin-right:20px;margin-left:50px;">
+            <a class="profile" href="#profile"><i class="material-icons">person</i></a>
+        </div>
+    </div><br><br>
     <div id="middle_sec" style="margin-bottom: 50px;margin-top:80px;">
         <div class="slide">
         
         </div>
         <div class="container_products">
-            <div class="product-1">
+            <a href="#product-1"><div class="product-1">
                 <table class="tab-1">
                     <tr><td colspan="2"><img src="shirt.webp"></td></tr>
                     <tr>
@@ -195,8 +184,8 @@
                         <td style="font-size: 10px;background-color: #ddd;color: black;">100 sold</td>
                     </tr>
                 </table>
-            </div>
-            <div class="product-2">
+            </div></a>
+            <a href="#product-2"><div class="product-2">
                 <table class="tab-2">
                     <tr><td colspan="2"><img src="shirt.webp"></td></tr>
                     <tr>
@@ -221,8 +210,8 @@
                         <td style="font-size: 10px;background-color: #ddd;color: black;">100 sold</td>
                     </tr>
                 </table>
-            </div>
-            <div class="product-3">
+            </div></a>
+            <a href="#product-3"><div class="product-3">
                 <table class="tab-2">
                     <tr><td colspan="2"><img src="shirt.webp"></td></tr>
                     <tr>
@@ -247,8 +236,8 @@
                         <td style="font-size: 10px;background-color: #ddd;color: black;">100 sold</td>
                     </tr>
                 </table>
-            </div>
-            <div class="product-2">
+            </div></a>
+            <a href="#product-4"><div class="product-2">
                 <table class="tab-2">
                     <tr><td colspan="2"><img src="shirt.webp"></td></tr>
                     <tr>
@@ -273,11 +262,21 @@
                         <td style="font-size: 10px;background-color: #ddd;color: black;">100 sold</td>
                     </tr>
                 </table>
-            </div>
+            </div></a>
         </div>
     </div>
     
     <div class="navbar">
+        <div style="padding:9px;">
+            <form action="/action_page.php">
+                <label for="sort">Sort:</label>
+                <select name="sort" id="sort">
+                    <option value="price">Cheapest</option>
+                    <option value="popularity">Most Popular</option>
+                    <option value="update">Most Recent</option>
+                </select>
+            </form>
+        </div>
         <a href="#home" class="active">Home</a>
         <a href="#history">History</a>
         <a href="#cart">Cart</a>
